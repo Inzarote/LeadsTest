@@ -1,0 +1,36 @@
+server:
+  port:8080
+
+spring:
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://rm-8vbe6o359761y8pv66o.mysql.zhangbei.rds.aliyuncs.com:3306/lingzhu-rec-dev?useSSL=false&characterEncoding=UTF-8&autoReconnect=true&allowMultiQueries=true&useAffectedRows=true&serverTimezone=Asia/Shanghai&zeroDateTimeBehavior=convertToNull
+    username: lingzhu_dev
+    password: Pass2021@01%12
+    jpa:
+      hibernate:
+        ddl-auto: update     #create删除重建,create-drop关闭删除,update根据model修改但不能更新表结构,validate根据model修改但不能创建新表
+      show-sql: true    #是否打印sql
+
+
+#mybatis-plush配置
+mybatis-plus:
+  type-aliases-package: com.jd.pojo
+  mapper-locations: classpath:/mybatis/mappers/*.xml
+  configuration:
+    map-underscore-to-camel-case: true
+
+##配置控制台打印日志Debug，用来查看sql写没写错
+#logging:
+#  level:
+#    com.jd.mapper: debug
+#spring:
+#  datasource:
+#    driver-class-name: com.mysql.cj.jdbc.Driver
+#    url: jdbc:mysql://127.0.0.1:3306/demo
+#    username: root
+#    password: Yyn771392435!
+#  jpa:
+#    hibernate:
+#      ddl-auto: update     #create删除重建,create-drop关闭删除,update根据model修改但不能更新表结构,validate根据model修改但不能创建新表
+#    show-sql: true    #是否打印sql
